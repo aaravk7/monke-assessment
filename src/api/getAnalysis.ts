@@ -5,14 +5,12 @@ const modelNames = modelsResponse.map((model) => model.model_name);
 
 export const getAnalysis = async (modelName: string) => {
   let loading = true;
-  let data = [];
+  let data = null;
 
   await delay(1000);
 
   if (!modelNames.includes(modelName)) {
-    data = [null];
     loading = false;
-
     return { data, loading };
   }
 
